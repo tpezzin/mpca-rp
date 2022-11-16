@@ -8,40 +8,40 @@
 
 Utilizando uma linguagem de programação que tenha a construção lambda, i.e., definição de funções anônimas, implemente as funções dadas no Problema 5. Sua implementação deve ser o mais próxima do Cálculo 𝜆 que a linguagem em questão permitir.
 
-(a) MIN — recebe uma lista de números e retorna o menor deles.
+(b) MAX — recebe uma lista de números e retorna o maior deles.
 
 **Implementação**
 ###### Local do arquivo: ###### 
-/trab1/src/probl6a/exercicio6min.clj
+/trab1/src/probl6b/exercicio6max.clj
 
 
 ```python
-(defn minlst
+(defn maxlst
   ([arglist]
-  (if (empty? (rest arglist))
-    (println (first arglist))
-    (minlst (rest arglist) (first arglist))
-    ))
+   (if (empty? (rest arglist))
+     (println (first arglist))
+     (maxlst (rest arglist) (first arglist))
+     ))
 
   ([arglist m]
    (if (empty? arglist)
      (println m)
      (let [i (first arglist)]
        (if (< i m)
-         (recur (rest arglist) i)
          (recur (rest arglist) m)
+         (recur (rest arglist) i)
          )
        )
      )
-    )
+   )
   )
 
-(minlst [10 20 6 9 5 ])
+(maxlst [10 20 6 9 5 ])
 ```
 
 **Implementação**
 
-Implementação em Clojure de uma fução chamada minlst que recebe uma lista e retorna seu menor número por meio de uma recursão que valida se o primeiro elemento é menor do que o restante da lista. Sempre que um elemento menor é identificado, ele é passado por parâmetro para a recursão utiliza-lo como sendo o menor, e assim, compara-lo com os demais. 
+Implementação em Clojure de uma fução chamada maxlst que recebe uma lista e retorna seu maior número por meio de uma recursão que valida se o primeiro elemento é maior do que o restante da lista. Sempre que um elemento maior é identificado, ele é passado por parâmetro para a recursão utiliza-lo como sendo o maior, e assim, compara-lo com os demais. 
 
 **Execução**
 
