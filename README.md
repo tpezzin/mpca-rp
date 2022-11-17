@@ -8,40 +8,24 @@
 
 Utilizando uma linguagem de programação que tenha a construção lambda, i.e., definição de funções anônimas, implemente as funções dadas no Problema 5. Sua implementação deve ser o mais próxima do Cálculo 𝜆 que a linguagem em questão permitir.
 
-(b) MAX — recebe uma lista de números e retorna o maior deles.
+(c\) APPEND — recebe duas listas e retorna a concatenação destas duas listas.
 
 **Implementação**
 ###### Local do arquivo: ###### 
-/trab1/src/probl6b/exercicio6max.clj
+/trab1/src/probl6c/exercicio6append.clj
 
 
 ```python
-(defn maxlst
-  ([arglist]
-   (if (empty? (rest arglist))
-     (println (first arglist))
-     (maxlst (rest arglist) (first arglist))
-     ))
-
-  ([arglist m]
-   (if (empty? arglist)
-     (println m)
-     (let [i (first arglist)]
-       (if (< i m)
-         (recur (rest arglist) m)
-         (recur (rest arglist) i)
-         )
-       )
-     )
-   )
+(defn appendlst
+  ([arglist1 arglist2]
+   (println (concat arglist1 arglist2)))
   )
-
-(maxlst [10 20 6 9 5 ])
+(appendlst [1 2 2] [3 3 4 5])
 ```
 
 **Implementação**
 
-Implementação em Clojure de uma fução chamada maxlst que recebe uma lista e retorna seu maior número por meio de uma recursão que valida se o primeiro elemento é maior do que o restante da lista. Sempre que um elemento maior é identificado, ele é passado por parâmetro para a recursão utiliza-lo como sendo o maior, e assim, compara-lo com os demais. 
+Implementação em Clojure de uma função chamada appendlst que recebe duas listas e retorna a concatenação da primeira com a segunda. Utilizei a função concat para realizar a atividade, ela recebe como parâmetro a primeira e a segunda lista, concatenando a segunda na primeira. 
 
 **Execução**
 
